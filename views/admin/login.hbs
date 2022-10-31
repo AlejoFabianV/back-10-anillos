@@ -1,0 +1,18 @@
+<div>
+    <form action="/admin/login" method="post">
+        <div class="mb-3" style="max-width: 1270px; margin: auto; padding-top: 15px;">
+            <label for="exampleInputEmail1" class="form-label" style="color: white;">Usuario <i class="fa-solid fa-user"></i></label>
+            <input type="text" name="usuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3" style="max-width: 1270px; margin: auto;">
+            <label for="exampleInputPassword1" class="form-label" style="color: white;">Contraseña <i class="fa-solid fa-user-secret"></i></label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div style="max-width: 1270px; margin: auto; padding-bottom: 15px;">
+            <button type="submit" class="btn btn-secondary">Ingresar</button>
+        </div>
+    </form>
+    {{#if error}}
+        <p style="max-width: 1270px; margin: auto; padding-bottom: 15px; color: white;">Usuario y/o contraseña incorrecta <i class="fa-solid fa-triangle-exclamation"></i></p>
+    {{/if}}
+</div>
