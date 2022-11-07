@@ -75,6 +75,10 @@ h5{
   color: white;
 }
 
+.from-control{
+  height: 120px;
+}
+
 button{
   margin-bottom: 15px;
 }
@@ -84,6 +88,7 @@ button{
   color: white;
 }
 
+/* iconos de eliminar y editar */
 .table tbody tr td a{
   padding: 6px;
 }
