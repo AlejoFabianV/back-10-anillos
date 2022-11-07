@@ -1,7 +1,46 @@
-<div class="container" style="margin: 50px auto;">
+<div class="container">
     <div class="row">
         <div class="col">
-            <p class="text-right">Hola {{persona}} <a href="/admin/login/logout" class="btn btn-danger">Cerrar sesión <i class="fa-solid fa-right-from-bracket"></i></a></p>
+            <p class="text-right">Hola {{persona}} <i class="fa-solid fa-hand-peace"></i> <a href="/admin/login/logout" class="btn btn-danger">Cerrar sesión <i class="fa-solid fa-right-from-bracket"></i></a></p>
         </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-7">
+        <h2>Listado de novedades</h2>
+    </div>
+    <div class="col-5 text-end">
+        <a href="/admin/novedades/agregar" class="btn btn-secondary">Nuevo <i class="fa-solid fa-plus"></i></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">#</th>
+                    <th scope="col">Titulo</th>
+                    <td scope="col">Subtitulo</td>
+                    <th scope="col">Descripcion</th>
+                    <th class="text-end">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each novedades}}
+                <tr>
+                    <th scope="row" style="color: white;">{{id}}</th>
+                    <td style="color: white;">{{titulo}}</td>
+                    <td style="color: white;">{{subtitulo}}</td>
+                    <td style="color: white;">{{descripcion}}</td>
+                    <td class="text-end">
+                        <a href="#" title="Editar" class="btn btn-sm btn-info"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="#" title="Eliminar" class="btn btn-sm btn-dark"><i class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
     </div>
 </div>
