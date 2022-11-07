@@ -7,15 +7,18 @@
                     <input type="hidden" value="{{novedad.id}}" class="form-control" name="id">
                 </div>
                 <div class="mb-3 row">
+                    <label for="" class="form-label">Titulo</label>
                     <input type="text" value="{{novedad.titulo}}" class="form-control" name="titulo">
                 </div>
                 <div class="mb-3 row">
-                    <textarea type="text" class="from-control" name="subtitulo">{{novedad.subtitulo}}</textarea>
+                    <label for="" class="form-label">Subtitulo</label>
+                    <input type="text" value="{{novedad.subtitulo}}" class="form-control" name="subtitulo">
                 </div>
                 <div class="mb-3 row">
+                    <label for="" class="form-label">Descripcion</label>
                     <textarea type="text" class="from-control" name="descripcion">{{novedad.descripcion}}</textarea>
                 </div>
-                <button type="submit" class="btn btn-secondary">Guardar  <i class="fa-solid fa-floppy-disk"></i> </button>
+                <button type="submit" class="btn btn-secondary">Modificar <i class="fa-solid fa-arrows-rotate"></i></button>
             </form>
             {{#if error}}
                 <h5>{{message}}</h5>
