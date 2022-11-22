@@ -1,9 +1,33 @@
 var express = require('express');
 var router = express.Router();
 var novedadesModel = require('./../../models/novedadesModel');
+var util = require('util');
+var cloudinary = require('cloudinary').v2;
+var uploader = util.promisify(cloudinary.uploader.upload);
+var destroy = util.promisify(cloudinary.uploader.destroy);
 
 router.get('/', async function(req, res, next) {
   var novedades = await novedadesModel.getNovedades();
+
+  novedades = novedades.map(novedad => {
+    if (novedad.img_id) {
+      const portada = cloudinary.image(novedad.img_id, {
+        width: 90,
+        height: 120,
+        crop: 'fill'
+      });
+      return {
+        ...novedad,
+        portada
+      }
+    }else {
+      return {
+        ...novedad,
+        portada: ''
+      }
+    }
+  })
+
   res.render('admin/novedades', {
     layout: 'admin/layout', 
     persona: req.session.nombre,
@@ -19,8 +43,17 @@ router.get('/agregar', (req, res, next) => {
 
 router.post('/agregar', async (req, res, next) => {
   try{
+    var img_id = '';
+    if (req.files && Object.keys(req.files).length > 0) {
+      portada = req.files.portada;
+      img_id = (await uploader(portada.tempFilePath)).public_id; 
+    }
+
     if (req.body.titulo != '' && req.body.subtitulo != '' && req.body.descripcion != ''){
-      await novedadesModel.insertNovedad(req.body);
+      await novedadesModel.insertNovedad({
+        ...req.body,
+        img_id
+      });
       res.redirect('/admin/novedades')
     }else {
       res.render('admin/agregar' , {
@@ -56,10 +89,28 @@ router.get('/editar/:id', async (req, res, next) => {
 
 router.post('/editar', async (req, res, next) => {
   try {
+    let img_id = req.body.img_original; 
+    let borar_img_vieja = false;
+
+    if (req.body.img_delete === "1") {
+      img_id = null;
+      borar_img_vieja = true;
+    }else {
+      if (req.files && Object.keys(req.files).length > 0) {
+        portada = req.files.portada;
+        img_id = (await uploader(portada.tempFilePath)).public_id;
+        borar_img_vieja = true;
+      }
+    }
+    if (borar_img_vieja && req.body.img_original) {
+      await (destroy(req.body.img_original));
+    }
+
     let obj = {
       titulo: req.body.titulo,
       subtitulo: req.body.subtitulo,
-      descripcion: req.body.descripcion
+      descripcion: req.body.descripcion,
+      img_id
     }
 
     await novedadesModel.editarNovedadesById(obj, req.body.id);
