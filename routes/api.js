@@ -52,12 +52,12 @@ router.post('/contacto', async (req, res) => {
     ${req.body.email} <br>. Su mensaje o consulta fue: ${req.body.mensaje}` 
   }
 
-  var contactoWeb = nodemailer.createcontactoWeb({
-    host: process.env,SMTP_HOST,
-    port: process.env,SMTP_PORT,
+  var contactoWeb = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
     auth: {
-      user: process.env,SMTP_USER,
-      pass: process.env,SMTP_PASS
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS
     }
   });
 
