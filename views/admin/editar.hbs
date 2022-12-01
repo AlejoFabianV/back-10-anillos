@@ -31,6 +31,10 @@
                         <input type="hidden" name="img_original" id="img_original" value="{{novedad.img_id}}">
                     </p>
                 </div>
+                <div class="mb-3 row">
+                    <label for="" class="form-label">Disponibilidad de stock</label>
+                    <input type="text" value="{{novedad.stock}}" class="form-control" name="stock">
+                </div>
                 <button type="submit" class="btn btn-secondary">Modificar <i class="fa-solid fa-arrows-rotate"></i></button>
             </form>
             {{#if error}}

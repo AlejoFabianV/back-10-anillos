@@ -49,7 +49,7 @@ router.post('/agregar', async (req, res, next) => {
       img_id = (await uploader(portada.tempFilePath)).public_id; 
     }
 
-    if (req.body.titulo != '' && req.body.subtitulo != '' && req.body.descripcion != '' && req.body.precio != ''){
+    if (req.body.titulo != '' && req.body.subtitulo != '' && req.body.descripcion != '' && req.body.precio != '' && req.body.stock != ''){
       await novedadesModel.insertNovedad({
         ...req.body,
         img_id
@@ -116,6 +116,7 @@ router.post('/editar', async (req, res, next) => {
       subtitulo: req.body.subtitulo,
       descripcion: req.body.descripcion,
       precio: req.body.precio,
+      stock: req.body.stock,
       img_id
     }
 
