@@ -1,0 +1,94 @@
+header{
+  background-color: #000000;
+  width: 100%;
+  height: 200px;
+}
+header img{
+  width: 180px;
+  height: 180px;
+  border-radius: 20%;
+  margin-left: 25px;
+}
+header h1{
+  color: white;
+  font-size: 60px;
+  display: inline;
+  font-weight: 100;
+  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 15px;
+  margin-top: 50px;
+}
+
+footer{
+  background-color: #000000;
+  padding: 25px;
+}
+footer div p{
+  color: white;
+  font-size: 18px;
+  font-style: italic;
+  margin: auto;
+}
+
+body{
+  background-color: rgba(0, 0, 0, 0.788);
+  margin: 0;
+  padding: 0;
+}
+.holder{
+  max-width: 1270px;
+  display: flex;
+  margin: 0 auto;
+}
+h2{
+  color: white;
+  font-size: 40px;
+  font-family: 'Anton', sans-serif;
+  margin-left: 15px;
+}
+
+h4{
+  color: white;
+  font-size: 15px;
+  margin: 0;
+}
+
+h5{
+  color: white; 
+  margin-bottom: 15px;
+}
+
+.text-right{
+  color: white; 
+  font-size: 30px; 
+  float: right;
+}
+
+.container, .row{
+  max-width: 1270px;
+  margin: auto; 
+  padding-top: 15px;
+}
+
+.form-label{
+  color: white;
+}
+
+.from-control{
+  height: 120px;
+}
+
+button{
+  margin-bottom: 15px;
+}
+
+.errorInicioLogin{
+  margin-bottom: 15px;
+  color: white;
+}
+
+/* iconos de eliminar y editar */
+.table tbody tr td a{
+  padding: 6px;
+}

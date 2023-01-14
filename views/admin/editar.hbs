@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h2>Editar novedades</h2>
+            <form action="/admin/novedades/editar" method="post" enctype="multipart/form-data">
+            <div class="mb-3 row">
+                    <input type="hidden" value="{{novedad.id}}" class="form-control" name="id">
+                </div>
+                <div class="mb-3 row">
+                    <label for="" class="form-label">Titulo</label>
+                    <input type="text" value="{{novedad.titulo}}" class="form-control" name="titulo">
+                </div>
+                <div class="mb-3 row">
+                    <label for="" class="form-label">Subtitulo</label>
+                    <input type="text" value="{{novedad.subtitulo}}" class="form-control" name="subtitulo">
+                </div>
+                <div class="mb-3 row">
+                    <label class="form-label">Descripcion</label>
+                    <textarea type="text" class="from-control" name="descripcion">{{novedad.descripcion}}</textarea>
+                </div>
+                <div class="mb-3 row">
+                    <label for="" class="form-label">Precio</label>
+                    <input type="number" value="{{novedad.precio}}" class="form-control" name="precio">
+                </div>
+                <div class="mb-3 row">
+                    <p>
+                        <label class="form-label">Portada: <input type="file" name="portada" id="portada"></label>
+                    </p>
+                    <p>
+                        <label class="form-label"><input type="checkbox" name="img_delete" id="img_delete" value="1"> Desea eliminar la imagen actual?</label>
+                        <input type="hidden" name="img_original" id="img_original" value="{{novedad.img_id}}">
+                    </p>
+                </div>
+                <div class="mb-3 row">
+                    <label for="" class="form-label">Disponibilidad de stock</label>
+                    <input type="text" value="{{novedad.stock}}" class="form-control" name="stock">
+                </div>
+                <button type="submit" class="btn btn-secondary">Modificar <i class="fa-solid fa-arrows-rotate"></i></button>
+            </form>
+            {{#if error}}
+                <h5>{{message}}</h5>
+            {{/if}}
+        </div>
+    </div>
+</div>

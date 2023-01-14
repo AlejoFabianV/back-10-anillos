@@ -1,0 +1,18 @@
+<div class="container">
+    <form action="/admin/login" method="post">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Usuario <i class="fa-solid fa-user"></i></label>
+            <input type="text" name="usuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Contraseña <i class="fa-solid fa-user-secret"></i></label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-secondary">Ingresar <i class="fa-solid fa-door-open"></i></button>
+        </div>
+    </form>
+    {{#if error}}
+        <p class="errorInicioLogin">Usuario y/o contraseña incorrecta <i class="fa-solid fa-triangle-exclamation"></i></p>
+    {{/if}}
+</div>
