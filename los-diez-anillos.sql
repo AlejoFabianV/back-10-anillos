@@ -17,15 +17,11 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
 -- Base de datos: `los-diez-anillos`
---
 
 -- --------------------------------------------------------
 
---
 -- Estructura de tabla para la tabla `novedades`
---
 
 DROP TABLE IF EXISTS `novedades`;
 CREATE TABLE IF NOT EXISTS `novedades` (
@@ -38,9 +34,7 @@ CREATE TABLE IF NOT EXISTS `novedades` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
---
 -- Volcado de datos para la tabla `novedades`
---
 
 INSERT INTO `novedades` (`id`, `titulo`, `subtitulo`, `descripcion`, `precio`, `img_id`) VALUES
 (1, 'Venom 01', 'REX', 'Tras el colapso de Shield, una maldad primordial ha despertado bajo las calles de Nueva York. Hace tiempo, un monstruo mítico aterrorizó a los humanos y a los klyntar. Ahora ha despertado, está furioso y tiene una influencia sobre el simbionte de Venom ¡que amenza con la conexión entre Eddie y su otro yo!.', 1100, 'iogxvbgxm5uj60i7sb5a'),
