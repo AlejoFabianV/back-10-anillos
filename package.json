@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./index.js"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "cloudinary": "^1.32.0",
