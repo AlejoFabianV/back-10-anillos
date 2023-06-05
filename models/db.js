@@ -8,7 +8,6 @@ const pool = mysql.createPool({
     password: process.env.MYSQL_PASSWORD,
     database: process.env.MYSQL_DB_NAME,
     port: process.env.MYSQL_PORT,
-    url: process.env.MYSQL_URL
 }) 
 
 pool.query = util.promisify(pool.query);
