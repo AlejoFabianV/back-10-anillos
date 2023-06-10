@@ -1,8 +1,8 @@
 var pool = require('./db');
 
 async function getNovedades() {
-    var query = 'select * from novedades';
-    var rows = await pool.query(query);
+    let query = 'select * from novedades';
+    let rows = await pool.query(query);
     return rows;
 }
 
