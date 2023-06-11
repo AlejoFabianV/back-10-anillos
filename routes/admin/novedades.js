@@ -7,7 +7,7 @@ var uploader = util.promisify(cloudinary.uploader.upload);
 var destroy = util.promisify(cloudinary.uploader.destroy);
 
 router.get('/', async function(req, res, next) {
-  var novedades = await novedadesModel.getNovedades();
+  var novedades = await novedadesModel.getNovedades().catch();
 
   novedades = novedades.map(novedad => {
     if (novedad.img_id) {
