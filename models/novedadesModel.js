@@ -2,7 +2,7 @@ var pool = require('./db');
 
 async function getNovedades() {
     let query = 'select * from novedades';
-    let rows = pool.query(query);
+    let rows = await pool.query(query);
     return rows;
 }
 
