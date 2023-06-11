@@ -15,7 +15,7 @@ router.get('/logout', function (req, res, next) {
   });
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/', async function (req, res, next) {
   try{
     var usuario = req.body.usuario;
     var password = req.body.password;
