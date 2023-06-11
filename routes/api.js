@@ -6,7 +6,6 @@ var cloudinary = require('cloudinary').v2;
 var nodemailer = require('nodemailer');
 
 router.get('/novedades', async function (req, res, next) {
-  try{
     let novedades = await novedadesModel.getNovedades();
     novedades = novedades.map(novedades => {
         if (novedades.img_id) {
@@ -27,10 +26,6 @@ router.get('/novedades', async function (req, res, next) {
         }
       });
     res.json(novedades);
-    
-  }  catch(error){
-    throw new Error('hubo un error')
-  }
   
 });
 
