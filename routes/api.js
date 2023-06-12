@@ -5,6 +5,12 @@ var novedadesModel = require('./../models/novedadesModel');
 var cloudinary = require('cloudinary').v2; 
 var nodemailer = require('nodemailer');
 
+cloudinary.config({ 
+  cloud_name: 'dbouwy1jn', 
+  api_key: '969884313554882', 
+  api_secret: '9K0Wv3KvzF0SqCJu5BjEIGG_rUQ' 
+});
+
 router.get('/novedades', async function (req, res, next) {
     let novedades = await novedadesModel.getNovedades();
     novedades = novedades.map(novedades => {
