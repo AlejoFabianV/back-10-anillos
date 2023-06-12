@@ -23,7 +23,7 @@ router.get('/novedades', async function (req, res, next) {
             ...novedades,
             portada: ''
           }
-        }
+        } 
       });
     res.json(novedades);
   
