@@ -25,6 +25,7 @@ router.get('/novedades', async function (req, res, next) {
           }
         }
       });
+    cloudinary = json.replace('http://', 'https://')
     res.json(novedades);
   
 });
