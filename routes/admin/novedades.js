@@ -9,7 +9,8 @@ var destroy = util.promisify(cloudinary.uploader.destroy);
 cloudinary.config({ 
   cloud_name: 'dbouwy1jn', 
   api_key: '969884313554882', 
-  api_secret: '9K0Wv3KvzF0SqCJu5BjEIGG_rUQ' 
+  api_secret: '9K0Wv3KvzF0SqCJu5BjEIGG_rUQ',
+  secure: true
 });
 
 router.get('/', async function(req, res, next) {
