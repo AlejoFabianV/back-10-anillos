@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var novedadesModel = require('./../../models/novedadesModel');
 var util = require('util');
-var cloudinary = require('cloudinary').v2;
+var cloudinary = require('cloudinary').v2.api;
 var uploader = util.promisify(cloudinary.uploader.upload);
 var destroy = util.promisify(cloudinary.uploader.destroy);
 
