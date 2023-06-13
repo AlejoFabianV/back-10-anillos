@@ -10,6 +10,7 @@ cloudinary.config({
   cloud_name: 'dbouwy1jn', 
   api_key: '969884313554882', 
   api_secret: '9K0Wv3KvzF0SqCJu5BjEIGG_rUQ',
+  CLOUDINARY_URL: 'cloudinary://969884313554882:9K0Wv3KvzF0SqCJu5BjEIGG_rUQ@dbouwy1jn',
   secure: true
 });
 
