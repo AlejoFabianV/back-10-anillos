@@ -7,10 +7,9 @@ var uploader = util.promisify(cloudinary.uploader.upload);
 var destroy = util.promisify(cloudinary.uploader.destroy);
 
 cloudinary.config({ 
-  cloud_name: process.env.CLOUD_NAME, 
-  api_key: process.env.API_KEY, 
-  api_secret: process.env.API_SECRET,
-  url: process.env.CLOUDINARY_URL
+  cloud_name: 'dbouwy1jn', 
+  api_key: '969884313554882', 
+  api_secret: '9K0Wv3KvzF0SqCJu5BjEIGG_rUQ' 
 });
 
 router.get('/', async function(req, res, next) {
