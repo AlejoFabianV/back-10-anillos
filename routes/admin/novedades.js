@@ -20,7 +20,8 @@ router.get('/', async function(req, res, next) {
       const portada = cloudinary.image(novedad.img_id, {
         width: 90,
         height: 120,
-        crop: 'fill'
+        crop: 'fill',
+        secure: true 
       });
       return {
         ...novedad,

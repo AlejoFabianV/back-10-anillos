@@ -33,7 +33,9 @@ router.get('/novedades', async function (req, res, next) {
 router.get('/producto/:titulo/:subtitulo/:id', async function (req, res, next) {
   let id = req.params.id;
   let producto = await novedadesModel.getNovedadesById(id);
-  let portadaById = cloudinary.url(producto.img_id);
+  let portadaById = cloudinary.url(producto.img_id, {
+    secure: true
+  });
   producto = {
         ...producto,
         portadaById
