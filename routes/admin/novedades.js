@@ -3,7 +3,7 @@ var router = express.Router();
 var novedadesModel = require('./../../models/novedadesModel');
 var util = require('util');
 var cloudinary = require('cloudinary').v2;
-var uploader = util.promisify(cloudinary.uploader.upload(file, options).then(callback));
+var uploader = util.promisify(cloudinary.uploader.upload);
 var destroy = util.promisify(cloudinary.uploader.destroy);
 
 cloudinary.config({ 
