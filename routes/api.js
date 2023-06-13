@@ -12,7 +12,8 @@ router.get('/novedades', async function (req, res, next) {
           const portada = cloudinary.url(novedades.img_id, {
             width: 200,
             height: 300,
-            crop: 'fill'
+            crop: 'fill',
+            secure: true
           });
           return {
             ...novedades,
