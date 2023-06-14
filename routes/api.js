@@ -33,12 +33,12 @@ router.get('/novedades', async function (req, res, next) {
 router.get('/producto/:titulo/:subtitulo/:id', async function (req, res, next) {
   let id = req.params.id;
   let producto = await novedadesModel.getNovedadesById(id);
-  let portadaById = cloudinary.url(producto.img_id, {
+  let portada = cloudinary.url(`https://res.cloudinary.com/dbouwy1jn/image/upload/${producto.img_id}.jpg`, {
     secure: true
   });
   producto = {
         ...producto,
-        portadaById
+        portada
     };
     
     res.json(producto);
